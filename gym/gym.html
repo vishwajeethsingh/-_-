@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Gym - Your Fitness Destination</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo"> HEROS GYM </div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#classes">Classes</a></li>
+                <li><a href="#membership">Membership</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+
+        < class="slider">
+            <div class="slide" style="background-image: url('image.jpg');"></div>
+            <div class="slide" style="background-image: url('image2.jpg');"></div>
+
+            <div class="slide" style="background-image: url('image5.jpg');"></div>
+
+            </div>
+            </div>
+
+            <button id="prevBtn" class="slider-btn" onclick="changeSlide(-1)">&#9665;</button>
+            <button id="nextBtn" class="slider-btn" onclick="changeSlide(1)">&#9655;</button>
+
+            <script>
+                let slideIndex = 1;
+
+                showSlide(slideIndex);
+
+                function changeSlide(n) {
+                    showSlide(slideIndex += n);
+                }
+
+                function showSlide(n) {
+                    const slides = document.getElementsByClassName("slide");
+
+                    if (n > slides.length) {
+                        slideIndex = 1;
+                    }
+
+                    if (n < 1) {
+                        slideIndex = slides.length;
+                    }
+
+                    for (let i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+
+                    slides[slideIndex - 1].style.display = "block";
+                }
+            </script>
+    </section>
+
+    <section id="about" class="section">
+        <h2>About Us</h2>
+        <p>At My Gym, we are committed to helping you achieve your fitness goals. With state-of-the-art equipment and
+            experienced trainers, we provide the best environment for your fitness journey.</p>
+    </section>
+
+    <section id="classes" class="section">
+        <h2>Classes</h2>
+        <p>Choose from a variety of fitness classes including yoga, spinning, strength training, and more. Our classes
+            are suitable for all fitness levels.</p>
+    </section>
+
+    <section id="membership" class="section">
+        <h2>Membership</h2>
+        <p>Join us today and experience the benefits of a healthy lifestyle. We offer flexible membership plans to fit
+            your schedule and budget.</p>
+        <a href="#contact" class="cta-button">Contact Us</a>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need more information, feel free to get in touch with us. We're here to help you
+            on your fitness journey.</p>
+        <a href="contact.html" class="cta-button">Contact Now</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 My Gym. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
